@@ -1,2 +1,18 @@
-# panic-mechanisms
-Mechanistic investigation of near-perfect panic disorder classification using machine learning
+## License
+
+This project is licensed under the MIT License - see the 
+[LICENSE](LICENSE) file for details.
+
+## Data Availability
+
+NHANES data are publicly available at:
+https://www.cdc.gov/nchs/nhanes/
+
+Our processed datasets and analysis scripts are available 
+in this repository.
+
+## Citation
+
+If you use this code in your research, please cite:
+
+[Your citation here when published]
