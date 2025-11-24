@@ -1,0 +1,129 @@
+
+DATA QUALITY CHECK REPORT: 11 CLEAN FEATURES
+=============================================
+
+Date: 2025-11-12 09:36:02
+
+OBJECTIVE
+---------
+Verify that all 11 remaining features are truly clean and free of:
+- NHANES special codes (77, 88, 99, 999, 9999, 99999)
+- Impossible values
+- Extreme outliers
+- Suspicious distributions
+- Group-specific coding biases
+
+DATASET
+-------
+- Source: NHANES_panic_11features_CLEAN.csv
+- Total samples: 6581
+- Features checked: 11
+
+SUMMARY
+-------
+Total potential issues found: 11
+
+DETAILED FINDINGS
+-----------------
+
+1. NHANES SPECIAL CODES
+   Issues found: 2
+
+   🚨 FEATURES WITH SPECIAL CODES:
+
+   BPX_BPXDAR:
+      Code 77: 148 cases (2.25%)
+      Code 88: 41 cases (0.62%)
+      Code 99: 2 cases (0.03%)
+
+   ALQ_ALQ130:
+      Code 99: 4 cases (0.06%)
+
+
+2. VALUE RANGE VIOLATIONS
+   Issues found: 2
+
+   🚨 FEATURES WITH RANGE VIOLATIONS:
+
+   BPX_BPXDAR:
+      below_minimum: 64 cases
+         Examples: [2.90000000e+01 3.90000000e+01 3.50000000e+01 2.80000000e+01
+ 5.39760535e-79 3.00000000e+01 3.80000000e+01 3.60000000e+01
+ 2.20000000e+01 3.20000000e+01]
+
+   ALQ_ALQ130:
+      above_maximum: 16 cases
+         Examples: [99. 24. 36. 25.]
+
+
+3. EXTREME OUTLIERS (>5 SD)
+   Issues found: 3
+
+   ⚠️  FEATURES WITH EXTREME OUTLIERS:
+
+   BPX_BPXDAR:
+      Low outliers: 8
+      High outliers: 0
+      Total: 8 (0.13%)
+
+   BMX_BMXBMI:
+      Low outliers: 0
+      High outliers: 2
+      Total: 2 (0.03%)
+
+   ALQ_ALQ130:
+      Low outliers: 0
+      High outliers: 16
+      Total: 16 (0.34%)
+
+
+4. CATEGORICAL VALUE VIOLATIONS
+   Issues found: 0
+
+   ✅ ALL CATEGORICAL VALUES ARE VALID
+
+
+5. SUSPICIOUS DISTRIBUTIONS
+   Issues found: 2
+
+   ⚠️  FEATURES WITH SUSPICIOUS PATTERNS:
+
+   DEMO_INDFMPIR:
+      Most common value: 5.0
+      Frequency: 1291 (20.96%)
+
+   ALQ_ALQ130:
+      Most common value: 2.0
+      Frequency: 1380 (29.59%)
+
+
+6. GROUP-SPECIFIC ISSUES (PD vs Normal)
+   Issues found: 2
+
+   🚨 FEATURES WITH GROUP-SPECIFIC PATTERNS:
+
+   BPX_BPXDAR:
+      Code 77: PD=1, Normal=147
+      Code 88: PD=2, Normal=39
+      Code 99: PD=0, Normal=2
+
+   ALQ_ALQ130:
+      Code 99: PD=0, Normal=4
+
+
+CRITICAL ASSESSMENT
+-------------------
+
+🚨 DATA QUALITY CONCERNS DETECTED
+
+11 potential issues found across features.
+Some may be legitimate data variability, but others could be coding artifacts.
+
+RECOMMENDATION: INVESTIGATE AND CLEAN
+1. Review each flagged feature carefully
+2. Consult NHANES codebook
+3. Consider removing problematic values
+4. Re-run analysis after cleaning
+
+
+Generated: 2025-11-12 09:36:02

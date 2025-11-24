@@ -1,0 +1,146 @@
+
+PHASE 2.1: DECISION TREE ANALYSIS REPORT (ULTRA-CLEAN)
+=======================================================
+
+Date: 2025-11-12 22:52:02
+
+OBJECTIVE
+---------
+Extract simple, interpretable clinical decision rules for Panic Disorder
+screening using decision tree analysis.
+
+DATASET
+-------
+- Source: NHANES_panic_11features_ULTRA_CLEAN.csv
+- Total samples: 3144
+- PD cases: 115 (3.66%)
+- Normal cases: 3029 (96.34%)
+- Features: 11 (100% validated)
+
+DECISION TREE CONFIGURATION
+----------------------------
+- max_depth: 5 (balance interpretability vs accuracy)
+- min_samples_split: 50 (avoid overfitting)
+- min_samples_leaf: 20 (stable predictions)
+- class_weight: balanced
+- random_state: 42
+
+TREE STRUCTURE
+--------------
+- Depth: 5
+- Number of leaves: 6
+- Number of decision nodes: 11
+
+PERFORMANCE METRICS
+-------------------
+Training Set:
+  Accuracy: 46.65%
+
+Test Set:
+  Accuracy:  40.97%
+  Precision: 5.88%
+  Recall:    100.00%
+  F1-Score:  0.1111
+
+Confusion Matrix (Test):
+                Predicted
+                Normal    PD
+Actual Normal     293    464
+Actual PD           0     29
+
+TOP FEATURES USED IN TREE
+--------------------------
+DEMO_INDFMPIR       : 0.5392 (53.92%)
+BPX_BPXDAR          : 0.3880 (38.80%)
+BMX_BMXBMI          : 0.0458 (4.58%)
+DEMO_DMDHHSIZ       : 0.0270 (2.70%)
+
+
+CRITICAL THRESHOLDS
+-------------------
+
+BMX_BMXBMI:
+  Body Mass Index
+  Primary threshold: 41.55
+
+BPX_BPXDAR:
+  Diastolic Blood Pressure (mmHg)
+  Primary threshold: 82.50
+
+DEMO_DMDHHSIZ:
+  Household Size
+  Primary threshold: 4.50
+
+DEMO_INDFMPIR:
+  Poverty-Income Ratio
+  Primary threshold: 4.71
+
+
+TOP 3 CLINICAL DECISION RULES
+------------------------------
+
+
+COMPARISON WITH GRADIENT BOOSTING
+----------------------------------
+          Metric  Decision_Tree  Gradient_Boosting
+        Accuracy      40.966921            99.7500
+       Precision       5.882353           100.0000
+          Recall     100.000000            93.1000
+        F1-Score       0.111111             0.9643
+Interpretability      10.000000             3.0000
+
+INTERPRETABILITY ANALYSIS
+--------------------------
+Decision Tree:
+  ✅ Rules are human-readable
+  ✅ Can be manually applied by clinicians
+  ✅ Clear threshold values for each feature
+  ✅ Transparent decision process
+  ✅ Easy to communicate to patients
+  ⚠️  Moderate accuracy (41.0% vs 99.75%)
+
+Gradient Boosting:
+  ✅ Excellent accuracy (99.75%)
+  ❌ Black box model
+  ❌ Requires software to apply
+  ❌ Difficult to explain to clinicians
+  ❌ Not manually implementable
+
+CLINICAL UTILITY
+----------------
+The decision tree provides actionable screening rules that can be:
+1. Implemented in clinical practice without software
+2. Easily communicated to healthcare providers
+3. Applied in resource-limited settings
+4. Understood by patients
+
+Trade-off: ~58.8% accuracy loss for complete interpretability
+
+RECOMMENDATIONS
+---------------
+1. USE DECISION TREE for:
+   - Initial screening in primary care
+   - Resource-limited settings
+   - Patient communication
+   - Clinical decision support
+
+2. USE GRADIENT BOOSTING for:
+   - Research applications
+   - High-stakes decisions requiring maximum accuracy
+   - Software-based automated screening
+
+3. HYBRID APPROACH:
+   - Decision tree for initial triage
+   - Gradient Boosting for confirmation in complex cases
+
+GENERATED FILES
+---------------
+1. decision_tree_rules.txt - Complete text representation
+2. clinical_decision_rules.csv - Structured rules for implementation
+3. critical_thresholds.csv - Key threshold values
+4. feature_importance_tree.csv - Feature rankings
+5. Figure1_decision_tree_full.png - Visual tree diagram
+6. Figure2_feature_importance_tree.png - Importance plot
+7. Figure3_model_comparison.png - Tree vs GradientBoosting
+
+Generated: 2025-11-12 22:52:02

@@ -1,0 +1,60 @@
+
+WHQ_WHD050 INVESTIGATION REPORT
+================================
+
+Feature: Weight 1 Year Ago (WHQ_WHD050)
+Investigation Date: 2025-11-11 17:26:08
+
+EXECUTIVE SUMMARY
+-----------------
+This feature showed 98.5% separation between PD and Normal groups in Phase 1 analysis,
+despite having only a moderate Cohen's d. This investigation reveals the mechanism.
+
+MISSING DATA ANALYSIS
+---------------------
+Total missing: 4 (0.06%)
+PD missing: 0/178 (0.00%)
+Normal missing: 4/6403 (0.06%)
+
+DESCRIPTIVE STATISTICS
+----------------------
+                    PD              Normal          Difference
+Mean:              152.70           574.01          -421.31
+Median:            139.00           165.00           -26.00
+Std:                33.21          6154.67         -6121.46
+Range:           [110.00, 225.00]  [ 68.00, 99999.00]
+
+OUTLIER ANALYSIS
+----------------
+PD outliers (IQR method): 0 (0.0%)
+Normal outliers (IQR method): 62 (2.0%)
+
+BEST SINGLE CUTOFF
+------------------
+Value: 99999.00 lbs
+Rule: PD>cutoff, Normal<=cutoff
+Accuracy: 96.49%
+
+STATISTICAL TESTS
+-----------------
+Kolmogorov-Smirnov test: D = 0.266, p < 2.10e-07
+HIGHLY SIGNIFICANT DIFFERENCE IN DISTRIBUTIONS
+
+KEY FINDINGS
+------------
+1. CRITICAL: Near-perfect single-variable discrimination found!
+2. Low missingness - data quality good
+3. Significant outliers detected - may drive separation
+4. Distribution shapes: Different
+
+INTERPRETATION
+--------------
+The 98.5% separation observed in Phase 1 analysis appears to be driven by a clear single cutoff threshold.
+
+This suggests a strong univariate discriminator.
+
+RECOMMENDATION
+--------------
+⚠️  This feature alone provides near-perfect classification. Investigate if it should be excluded or if it represents true clinical signal.
+
+Generated: 2025-11-11 17:26:08

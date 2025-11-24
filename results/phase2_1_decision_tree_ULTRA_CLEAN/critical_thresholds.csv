@@ -1,0 +1,5 @@
+Feature,Description,Primary_Threshold,All_Thresholds
+BMX_BMXBMI,Body Mass Index,41.545000076293945,41.55
+BPX_BPXDAR,Diastolic Blood Pressure (mmHg),82.5,"56.50, 82.50"
+DEMO_DMDHHSIZ,Household Size,4.5,4.50
+DEMO_INDFMPIR,Poverty-Income Ratio,4.7099997997283936,4.71

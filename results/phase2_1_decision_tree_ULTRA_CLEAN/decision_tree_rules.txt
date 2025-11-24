@@ -1,0 +1,34 @@
+DECISION TREE RULES FOR PANIC DISORDER SCREENING
+================================================================================
+
+Feature Descriptions:
+  DEMO_INDFMPIR: Poverty-Income Ratio
+  BIX_BIDFAT: Body Fat Mass (kg)
+  BMX_BMXBMI: Body Mass Index
+  DEMO_RIDAGEMN: Age (months)
+  BPX_BPXDAR: Diastolic Blood Pressure (mmHg)
+  ALQ_ALQ130: Alcohol Consumption (drinks/day)
+  DEMO_RIAGENDR: Gender (1=Male, 2=Female)
+  DEMO_DMDMARTL: Marital Status
+  MPQ_MPQ070: Lower Back Pain (0=No, 1=Yes)
+  DEMO_DMDHHSIZ: Household Size
+  MCQ_MCQ250F: Family History HTN/Stroke
+
+================================================================================
+
+|--- DEMO_INDFMPIR <= 4.71
+|   |--- BPX_BPXDAR <= 82.50
+|   |   |--- BPX_BPXDAR <= 56.50
+|   |   |   |--- class: 0
+|   |   |--- BPX_BPXDAR >  56.50
+|   |   |   |--- BMX_BMXBMI <= 41.55
+|   |   |   |   |--- DEMO_DMDHHSIZ <= 4.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- DEMO_DMDHHSIZ >  4.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- BMX_BMXBMI >  41.55
+|   |   |   |   |--- class: 0
+|   |--- BPX_BPXDAR >  82.50
+|   |   |--- class: 0
+|--- DEMO_INDFMPIR >  4.71
+|   |--- class: 0

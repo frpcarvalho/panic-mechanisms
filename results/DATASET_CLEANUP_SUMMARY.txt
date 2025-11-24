@@ -1,0 +1,66 @@
+
+DATASET CLEANUP SUMMARY
+========================
+
+Date: 2025-11-11 21:37:20
+
+CHANGES MADE
+------------
+Original dataset: NHANES_panic_12features.csv
+New dataset: NHANES_panic_11features_CLEAN.csv
+
+REMOVED FEATURE
+---------------
+WHQ_WHD050 (Weight 1 Year Ago)
+
+Reason: Contains 99999 coded values (NHANES "Don't Know/Refused" code)
+        that created artificial 96.49% discrimination between groups.
+        This is a data quality artifact, not a true clinical signal.
+
+11 CLEAN FEATURES RETAINED
+---------------------------
+1. BIX_BIDFAT      - Body Fat Mass (kg)
+2. DEMO_INDFMPIR   - Poverty Income Ratio
+3. DEMO_RIDAGEMN   - Age (months)
+4. DEMO_RIAGENDR   - Gender
+5. BPX_BPXDAR      - Diastolic Blood Pressure
+6. DEMO_DMDHHSIZ   - Household Size
+7. BMX_BMXBMI      - Body Mass Index
+8. ALQ_ALQ130      - Alcohol Consumption (drinks/day)
+9. MCQ_MCQ250F     - Family History HTN/Stroke
+10. MPQ_MPQ070     - Lower Back Pain (last 3 months)
+11. DEMO_DMDMARTL  - Marital Status
+
+DATASET STATISTICS
+------------------
+Total samples: 6581
+Features: 11
+Target variable: 1 (CIDPSCOR)
+
+Target Distribution:
+- Panic Disorder: 178 (2.70%)
+- Normal: 6403 (97.30%)
+
+Missing Values: 5079 (7.016% of all values)
+
+NEXT STEPS
+----------
+1. Re-train the machine learning model with 11 clean features
+2. Verify if 100% accuracy is maintained with clean data
+3. Re-run Phase 1.1 distributional analysis with 11 features
+4. Compare new results with original 12-feature results
+5. Update paper methodology to document this data cleaning step
+
+IMPACT ASSESSMENT
+-----------------
+The removal of WHQ_WHD050 is expected to:
+- Reduce artificial discrimination power
+- Provide more realistic model performance estimates
+- Improve model generalizability
+- Ensure clinical validity of findings
+
+If the model still achieves near-perfect accuracy with 11 clean features,
+this strengthens the validity of the findings. If accuracy drops significantly,
+this indicates the original results were partly driven by data artifacts.
+
+Generated: 2025-11-11 21:37:20

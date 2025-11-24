@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+.DS_Store
+.AppleDouble
+._*
+Thumbs.db
+.vscode/
+.idea/
+~$*
+*.log
+data/processed/*.csv
+data/processed/*.pkl

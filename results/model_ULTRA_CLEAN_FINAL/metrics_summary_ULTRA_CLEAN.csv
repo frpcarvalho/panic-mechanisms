@@ -1,0 +1,10 @@
+Metric,Value
+Accuracy,0.9974554707379135
+Precision,1.0
+Recall,0.9310344827586207
+F1-Score,0.9642857142857143
+ROC-AUC,0.9841479524438574
+Specificity,1.0
+NPV,0.997364953886693
+Extreme_Predictions_Pct,100.0
+Borderline_Pct,0.0

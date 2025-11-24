@@ -1,0 +1,4 @@
+Domain,N_Features,Mean_Effect_Size,Max_Effect_Size,Min_Effect_Size,Features
+Biological,4,0.1261738251428483,0.30007393197868654,0.049601781782731155,"Diastolic Blood Pressure, Body Mass Index, Body Fat Mass (kg), Weight 1 Year Ago"
+Psychological,2,0.5628711546917466,0.5663995399806584,0.559342769402835,"Lower Back Pain, Family History HTN/Stroke"
+Social,6,0.2953361984107494,0.7000837335301541,0.0003552052915204106,"Poverty Income Ratio, Marital Status, Gender, Age (months), Household Size, Alcohol Consumption"
