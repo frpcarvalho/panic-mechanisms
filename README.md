@@ -15,4 +15,3 @@ in this repository.
 
 If you use this code in your research, please cite:
 
-[Your citation here when published]
